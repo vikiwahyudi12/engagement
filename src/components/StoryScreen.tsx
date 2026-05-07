@@ -12,7 +12,7 @@ const stories = [
   {
     chapter: "I",
     title: "Tentang Pertemuan",
-    body: "Ada momen-momen dalam hidup yang tidak bisa dijelaskan dengan logika. Ketika pertama kali kita bertemu, ada sesuatu yang berbeda — seperti semesta sedang berbisik pelan bahwa ini bukan kebetulan biasa.",
+    body: "Ada momen-momen dalam hidup yang tidak bisa dijelaskan dengan logika. Ketika pertama kali kita bertemu, ada sesuatu yang berbeda seperti semesta sedang berbisik pelan bahwa ini bukan kebetulan biasa.",
     quote: "Beberapa pertemuan tidak terjadi karena kebetulan.",
   },
   {
@@ -30,7 +30,7 @@ const stories = [
   {
     chapter: "IV",
     title: "Tentang Harapan Masa Depan",
-    body: "Aku membayangkan masa depan, dan kamu selalu ada di sana. Bukan sebagai pelengkap, tapi sebagai bagian yang tidak terpisahkan dari cerita yang ingin aku tulis bersama — cerita yang panjang, hangat, dan penuh makna.",
+    body: "Aku membayangkan masa depan, dan kamu selalu ada di sana. Bukan sebagai pelengkap, tapi sebagai bagian yang tidak terpisahkan dari cerita yang ingin aku tulis bersama cerita yang panjang, hangat, dan penuh makna.",
     quote: "Masa depan terasa lebih indah ketika kamu ada di dalamnya.",
   },
 ];
