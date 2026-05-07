@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Heart } from "lucide-react";
 import ConfettiEffect from "./ConfettiEffect";
+import { useName } from "./NameProvider";
 
 export default function FinalProposal() {
   const [answered, setAnswered] = useState(false);
@@ -12,6 +13,7 @@ export default function FinalProposal() {
 
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const { partnerName, isNameSet } = useName();
 
   const handleAnswer = () => {
     setAnswered(true);
@@ -29,6 +31,12 @@ export default function FinalProposal() {
     // Clear hearts after animation
     setTimeout(() => setHearts([]), 4000);
   };
+
+  useLayoutEffect(() => {
+    if (sectionRef.current) {
+      sectionRef.current.style.display = isNameSet ? 'flex' : 'none';
+    }
+  }, [isNameSet]);
 
   return (
     <section
@@ -111,7 +119,7 @@ export default function FinalProposal() {
           transition={{ duration: 1.4, delay: 0.5, ease: "easeOut" }}
           className="font-[var(--font-playfair)] text-3xl font-semibold leading-tight text-[#f5f0e8] sm:text-4xl md:text-5xl"
         >
-          <span className="italic">[Nama Perempuan]</span>,
+          <span className="italic">{partnerName}</span>,
           <br />
           <span className="mt-2 block text-2xl font-normal italic text-[#f5f0e8cc] sm:text-3xl">
             maukah kamu menjalani hidup bersamaku?

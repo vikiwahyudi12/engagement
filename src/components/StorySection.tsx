@@ -1,7 +1,9 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";interface StoryCard {
+import { useRef, useLayoutEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import { useName } from "./NameProvider";
+interface StoryCard {
   chapter: string;
   title: string;
   body: string;
@@ -43,6 +45,13 @@ const stories: StoryCard[] = [
 function StoryCard({ story, index }: { story: StoryCard; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { isNameSet } = useName();
+
+  useLayoutEffect(() => {
+    if (ref.current) {
+      ref.current.style.display = isNameSet ? 'flex' : 'none';
+    }
+  }, [isNameSet]);
 
   return (
     <motion.div
@@ -108,9 +117,17 @@ function StoryCard({ story, index }: { story: StoryCard; index: number }) {
 export default function StorySection() {
   const titleRef = useRef<HTMLDivElement>(null);
   const titleInView = useInView(titleRef, { once: true });
+  const { isNameSet } = useName();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    if (sectionRef.current) {
+      sectionRef.current.style.display = isNameSet ? 'block' : 'none';
+    }
+  }, [isNameSet]);
 
   return (
-    <section id="story" className="relative py-16 px-4 sm:py-24 sm:px-6">
+    <section ref={sectionRef} id="story" className="relative py-16 px-4 sm:py-24 sm:px-6">
       {/* Background glow */}
       <div
         className="pointer-events-none absolute inset-0"

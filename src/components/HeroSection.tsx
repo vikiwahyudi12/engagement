@@ -1,14 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart, ArrowRight } from "lucide-react";
+import { useName } from "./NameProvider";
+import { useState } from "react";
 
 interface HeroSectionProps {
   onOpen: () => void;
 }
 
 export default function HeroSection({ onOpen }: HeroSectionProps) {
+  const { partnerName, setPartnerName, isNameSet, setIsNameSet } = useName();
+  const [localName, setLocalName] = useState("");
+
   const handleOpen = () => {
+    if (!isNameSet) {
+      const nameToSet = localName.trim() || "Sayang";
+      setPartnerName(nameToSet);
+      setIsNameSet(true);
+      document.title = `Untuk ${nameToSet} — Viki`;
+    }
+
     onOpen();
     // Scroll setelah konten di-render (satu frame berikutnya)
     requestAnimationFrame(() => {
@@ -18,6 +30,66 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
       });
     });
   };
+
+  if (!isNameSet) {
+    return (
+      <section className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-5 text-center">
+        {/* Background elements from original component */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[#0a0806]" />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3 }}
+            className="absolute bottom-0 left-0 right-0 h-1/2"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 100%, rgba(201,168,76,0.08) 0%, rgba(180,100,50,0.04) 40%, transparent 70%)",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.7) 100%)",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 flex w-full max-w-md flex-col items-center gap-8">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="font-[var(--font-playfair)] text-3xl font-semibold text-[#f5f0e8] sm:text-4xl"
+          >
+            Untuk siapa pesan spesial ini?
+          </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="w-full"
+          >
+            <input
+              type="text"
+              value={localName}
+              onChange={(e) => setLocalName(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleOpen()}
+              placeholder="Tulis namanya di sini..."
+              className="w-full rounded-full border border-[#c9a84c44] bg-[#12100e] px-6 py-4 text-center font-[var(--font-poppins)] text-base text-[#f5f0e8] placeholder-[#f5f0e855] transition-all focus:border-[#c9a84c88] focus:outline-none focus:ring-2 focus:ring-[#c9a84c]/50"
+            />
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }}>
+            <motion.button onClick={handleOpen} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="pulse-glow group flex items-center gap-2 rounded-full border border-[#c9a84c55] bg-[#c9a84c0d] px-8 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#c9a84c] transition-all hover:border-[#c9a84c99] hover:bg-[#c9a84c1a]">
+              <span>Lanjutkan</span>
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-5 text-center">
@@ -109,7 +181,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
             transition={{ duration: 1, delay: 1.8 }}
             className="gold-shimmer italic"
           >
-            [Nama Perempuan]
+            {partnerName}
           </motion.span>
           ,
         </motion.h1>

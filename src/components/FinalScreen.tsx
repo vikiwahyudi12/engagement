@@ -4,12 +4,18 @@ import { useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import ConfettiEffect from "./ConfettiEffect";
+import { useName } from "./NameProvider";
 
 export default function FinalScreen() {
   const [answered, setAnswered] = useState(false);
   const [confetti, setConfetti] = useState(false);
   const [hearts, setHearts] = useState<{ id: number; x: number; size: number }[]>([]);
   const [tidakPos, setTidakPos] = useState({ x: 0, y: 0 });
+  const { partnerName, isNameSet } = useName();
+
+  if (!isNameSet) {
+    return null;
+  }
 
   const handleAnswer = () => {
     setAnswered(true);
@@ -102,7 +108,7 @@ export default function FinalScreen() {
           transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
           className="font-[var(--font-playfair)] text-2xl font-semibold leading-snug text-[#f5f0e8] sm:text-3xl md:text-4xl"
         >
-          <span className="italic">[Nama Perempuan]</span>,
+          <span className="italic">{partnerName}</span>,
           <br />
           <span className="mt-2 block text-xl font-normal italic text-[#f5f0e8cc] sm:text-2xl md:text-3xl">
             maukah kamu menjalani hidup bersamaku?

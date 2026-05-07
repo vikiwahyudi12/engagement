@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Poppins } from "next/font/google";
+import { NameProvider } from "@/components/NameProvider";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -42,9 +43,11 @@ export default function RootLayout({
       lang="id"
       className={`${playfair.variable} ${poppins.variable} h-full`}
     >
-      <body className="grain-overlay min-h-full bg-[#0a0806] text-[#f5f0e8] antialiased">
-        {children}
-      </body>
+      <NameProvider>
+        <body className="grain-overlay min-h-full bg-[#0a0806] text-[#f5f0e8] antialiased">
+          {children}
+        </body>
+      </NameProvider>
     </html>
   );
 }

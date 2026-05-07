@@ -1,13 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart, ArrowRight } from "lucide-react";
+import { useName } from "./NameProvider";
+import { useState } from "react";
 
 interface Props {
   onNext: () => void;
 }
 
 export default function HeroScreen({ onNext }: Props) {
+  const { partnerName, setPartnerName, isNameSet, setIsNameSet } = useName();
+  const [localName, setLocalName] = useState("");
+
+  const handleNameSubmit = () => {
+    const nameToSet = localName.trim() || "Sayang";
+    setPartnerName(nameToSet);
+    setIsNameSet(true);
+    document.title = `Untuk ${nameToSet} — Viki`;
+  };
+
+  if (!isNameSet) {
+    return (
+      <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden px-5 text-center">
+        {/* Background elements */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute inset-0 bg-[#0a0806]" />
+        </div>
+        <div className="relative z-10 flex w-full max-w-md flex-col items-center gap-8">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} className="font-[var(--font-playfair)] text-3xl font-semibold text-[#f5f0e8] sm:text-4xl">
+            Untuk siapa pesan spesial ini?
+          </motion.h1>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3, ease: "easeOut" }} className="w-full">
+            <input
+              type="text"
+              value={localName}
+              onChange={(e) => setLocalName(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleNameSubmit()}
+              placeholder="Tulis namanya di sini..."
+              className="w-full rounded-full border border-[#c9a84c44] bg-[#12100e] px-6 py-4 text-center font-[var(--font-poppins)] text-base text-[#f5f0e8] placeholder-[#f5f0e855] transition-all focus:border-[#c9a84c88] focus:outline-none focus:ring-2 focus:ring-[#c9a84c]/50"
+            />
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }}>
+            <motion.button onClick={handleNameSubmit} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="pulse-glow group flex items-center gap-2 rounded-full border border-[#c9a84c55] bg-[#c9a84c0d] px-8 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#c9a84c] transition-all hover:border-[#c9a84c99] hover:bg-[#c9a84c1a]">
+              <span>Lanjutkan</span>
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </motion.button>
+          </motion.div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden px-5 text-center">
       {/* Background */}
@@ -86,7 +130,7 @@ export default function HeroScreen({ onNext }: Props) {
             transition={{ duration: 1, delay: 1.8 }}
             className="gold-shimmer italic"
           >
-            [Nama Perempuan]
+            {partnerName}
           </motion.span>
           ,
         </motion.h1>

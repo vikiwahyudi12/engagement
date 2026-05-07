@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { useName } from "./NameProvider";
 
 interface Props {
   onNext: () => void;
@@ -40,6 +41,11 @@ export default function StoryScreen({ onNext }: Props) {
   const [dir, setDir] = useState(1);
   const isLast = idx === stories.length - 1;
   const story = stories[idx];
+  const { isNameSet } = useName();
+
+  if (!isNameSet) {
+    return null;
+  }
 
   const goNext = () => {
     if (isLast) {
