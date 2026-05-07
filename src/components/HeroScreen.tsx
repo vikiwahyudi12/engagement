@@ -86,7 +86,7 @@ export default function HeroScreen({ onNext }: Props) {
             transition={{ duration: 1, delay: 1.8 }}
             className="gold-shimmer italic"
           >
-            Anisaturrochmah
+            [Nama Perempuan]
           </motion.span>
           ,
         </motion.h1>
@@ -108,7 +108,7 @@ export default function HeroScreen({ onNext }: Props) {
         >
           <div className="h-px w-8 bg-[#c9a84c44]" />
           <p className="font-[var(--font-poppins)] text-xs tracking-widest text-[#c9a84c88]">
-            Ahmad Sayadi
+            Viki
           </p>
           <div className="h-px w-8 bg-[#c9a84c44]" />
         </motion.div>

@@ -111,7 +111,7 @@ export default function FinalProposal() {
           transition={{ duration: 1.4, delay: 0.5, ease: "easeOut" }}
           className="font-[var(--font-playfair)] text-3xl font-semibold leading-tight text-[#f5f0e8] sm:text-4xl md:text-5xl"
         >
-          <span className="italic">Anisaturrochmah</span>,
+          <span className="italic">[Nama Perempuan]</span>,
           <br />
           <span className="mt-2 block text-2xl font-normal italic text-[#f5f0e8cc] sm:text-3xl">
             maukah kamu menjalani hidup bersamaku?
@@ -127,7 +127,7 @@ export default function FinalProposal() {
         >
           <div className="h-px w-8 bg-[#c9a84c44]" />
           <p className="font-[var(--font-poppins)] text-sm tracking-widest text-[#c9a84c88]">
-            Ahmad Sayadi
+            Viki
           </p>
           <div className="h-px w-8 bg-[#c9a84c44]" />
         </motion.div>
@@ -215,7 +215,7 @@ export default function FinalProposal() {
               >
                 <div className="h-px w-8 bg-[#c9a84c44]" />
                 <p className="font-[var(--font-poppins)] text-xs tracking-widest text-[#c9a84c88]">
-                  Ahmad Sayadi
+                  Viki
                 </p>
                 <div className="h-px w-8 bg-[#c9a84c44]" />
               </motion.div>
@@ -238,7 +238,7 @@ export default function FinalProposal() {
           transition={{ duration: 1, delay: 2 }}
           className="font-[var(--font-poppins)] text-xs tracking-widest text-[#f5f0e844]"
         >
-          Dengan sepenuh cinta · Ahmad Sayadi
+          Dengan sepenuh cinta · Viki
         </motion.p>
       </div>
     </section>

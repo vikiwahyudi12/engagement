@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Untuk Anisaturrochmah — Ahmad Sayadi",
+  title: "Untuk [Nama Perempuan] — Viki",
   description:
     "Sebuah pesan dari hati, untuk seseorang yang selalu ingin kujadikan tujuan pulang.",
   icons: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Untuk Anisaturrochmah",
+    title: "Untuk [Nama Perempuan]",
     description: "Sebuah pesan dari hati yang paling dalam.",
     type: "website",
   },

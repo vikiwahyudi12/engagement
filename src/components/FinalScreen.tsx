@@ -102,7 +102,7 @@ export default function FinalScreen() {
           transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
           className="font-[var(--font-playfair)] text-2xl font-semibold leading-snug text-[#f5f0e8] sm:text-3xl md:text-4xl"
         >
-          <span className="italic">Anisaturrochmah</span>,
+          <span className="italic">[Nama Perempuan]</span>,
           <br />
           <span className="mt-2 block text-xl font-normal italic text-[#f5f0e8cc] sm:text-2xl md:text-3xl">
             maukah kamu menjalani hidup bersamaku?
@@ -117,7 +117,7 @@ export default function FinalScreen() {
         >
           <div className="h-px w-8 bg-[#c9a84c44]" />
           <p className="font-[var(--font-poppins)] text-xs tracking-widest text-[#c9a84c88]">
-            Ahmad Sayadi
+            Viki
           </p>
           <div className="h-px w-8 bg-[#c9a84c44]" />
         </motion.div>
@@ -209,7 +209,7 @@ export default function FinalScreen() {
               >
                 <div className="h-px w-8 bg-[#c9a84c44]" />
                 <p className="font-[var(--font-poppins)] text-xs tracking-widest text-[#c9a84c88]">
-                  Ahmad Sayadi
+                  Viki
                 </p>
                 <div className="h-px w-8 bg-[#c9a84c44]" />
               </motion.div>
