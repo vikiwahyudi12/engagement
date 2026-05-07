@@ -24,14 +24,17 @@ export default function FinalScreen() {
     const scriptUrl = "https://script.google.com/macros/s/AKfycbz77tTrsb8kHr1LxPBJuD0NIN6d90eDr7z-1uNCfSv7so_ASsLMfTH89V5KKQxqnPG2/exec";
     
     if (scriptUrl) {
-      const formData = new FormData();
-      formData.append("name", partnerName);
-      formData.append("answer", answer);
+      const data = new URLSearchParams();
+      data.append("name", partnerName);
+      data.append("answer", answer);
 
       fetch(scriptUrl, {
         method: "POST",
-        body: formData,
+        body: data,
         mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       }).catch((err) => console.error(err));
     }
 
