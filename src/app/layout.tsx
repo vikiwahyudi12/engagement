@@ -18,7 +18,13 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Untuk Anisaturrochmah — Ahmad Sayadi",
   description:
-    "Sebuah pesan dari hati, untuk seseorang yang paling ingin aku ajak pulang.",
+    "Sebuah pesan dari hati, untuk seseorang yang selalu ingin kujadikan tujuan pulang.",
+  icons: {
+    icon: "/favicon.ico",
+    other: [
+      { rel: "icon", url: "/icon.svg", type: "image/svg+xml" },
+    ],
+  },
   openGraph: {
     title: "Untuk Anisaturrochmah",
     description: "Sebuah pesan dari hati yang paling dalam.",
