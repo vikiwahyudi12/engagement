@@ -24,7 +24,7 @@ const stories = [
   {
     chapter: "III",
     title: "Tentang Cinta yang Tumbuh Perlahan",
-    body: "Cinta ini tidak datang seperti petir. Ia tumbuh perlahan, seperti bunga yang mekar di musim yang tepat. Setiap hari bersamamu menambahkan satu lapisan lagi pada sesuatu yang sudah terasa sangat berharga.",
+    body: "Cinta ini tidak datang seperti petir. Ia tumbuh perlahan, seperti bunga yang mekar di musim yang tepat. Meski kita tidak selalu bersama setiap hari, setiap percakapan, perhatian, dan kehadiranmu menambahkan satu lapisan lagi pada sesuatu yang sudah terasa sangat berharga.",
     quote: "Yang tumbuh perlahan, bertahan lebih lama.",
   },
   {
