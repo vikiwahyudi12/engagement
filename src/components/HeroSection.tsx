@@ -63,7 +63,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
             transition={{ duration: 1, ease: "easeOut" }}
             className="font-[var(--font-playfair)] text-3xl font-semibold text-[#f5f0e8] sm:text-4xl"
           >
-            Untuk siapa pesan spesial ini?
+            Hai, tulis namamu dulu ya
           </motion.h1>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
               value={localName}
               onChange={(e) => setLocalName(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleOpen()}
-              placeholder="Tulis namanya di sini..."
+              placeholder="Ketik namamu di sini..."
               className="w-full rounded-full border border-[#c9a84c44] bg-[#12100e] px-6 py-4 text-center font-[var(--font-poppins)] text-base text-[#f5f0e8] placeholder-[#f5f0e855] transition-all focus:border-[#c9a84c88] focus:outline-none focus:ring-2 focus:ring-[#c9a84c]/50"
             />
           </motion.div>
