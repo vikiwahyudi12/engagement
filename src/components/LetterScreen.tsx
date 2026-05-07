@@ -144,7 +144,7 @@ export default function LetterScreen({ onNext }: Props) {
                 Dengan sepenuh hati,
               </p>
               <p className="font-[var(--font-playfair)] text-base italic text-[#fda4af]">
-                Ahmad Sayadi
+              Viki
               </p>
             </motion.div>
           </div>

@@ -132,7 +132,7 @@ export default function ProposalLetter() {
               Dengan sepenuh hati,
             </p>
             <p className="font-[var(--font-playfair)] text-lg italic text-[#c9a84c]">
-              Ahmad Sayadi
+            Viki
             </p>
           </motion.div>
         </div>
