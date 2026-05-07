@@ -33,7 +33,7 @@ export default function MusicPlayer() {
   return (
     <audio
       ref={audioRef}
-      src="/melamarmu.mp3"
+      src="./melamarmu.mp3"
       loop
       preload="auto"
       aria-hidden="true"
