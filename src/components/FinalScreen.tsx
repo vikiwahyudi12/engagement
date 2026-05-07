@@ -141,7 +141,7 @@ export default function FinalScreen() {
             >
               {/* Tombol Iya — posisi tetap */}
               <button
-                onClick={handleAnswer}
+                onClick={() => handleAnswer("Iya")}
                 className="pulse-glow relative w-full overflow-hidden rounded-full border border-[#fda4af66] bg-[#fda4af15] py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#fda4af] transition-all active:scale-95 hover:border-[#fda4afaa] hover:bg-[#fda4af25]"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
@@ -156,7 +156,7 @@ export default function FinalScreen() {
 
               {/* Tombol Tentu iya — posisi tetap */}
               <button
-                onClick={handleAnswer}
+                onClick={() => handleAnswer("Tentu iya")}
                 className="w-full rounded-full border border-[#f8fafc22] py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#f8fafc77] transition-all active:scale-95 hover:border-[#fda4af44] hover:text-[#fda4af]"
               >
                 Tentu iya

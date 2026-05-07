@@ -15,9 +15,24 @@ export default function FinalProposal() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const { partnerName, isNameSet } = useName();
 
-  const handleAnswer = () => {
+  const handleAnswer = (answer: string) => {
     setAnswered(true);
     setConfetti(true);
+
+    // Ganti URL di bawah dengan URL Web App dari Google Apps Script Anda
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbz77tTrsb8kHr1LxPBJuD0NIN6d90eDr7z-1uNCfSv7so_ASsLMfTH89V5KKQxqnPG2/exec";
+    
+    if (scriptUrl !== "https://script.google.com/macros/s/AKfycbz77tTrsb8kHr1LxPBJuD0NIN6d90eDr7z-1uNCfSv7so_ASsLMfTH89V5KKQxqnPG2/exec") {
+      const formData = new FormData();
+      formData.append("name", partnerName);
+      formData.append("answer", answer);
+
+      fetch(scriptUrl, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors", // Sangat penting agar tidak terblokir oleh browser (CORS) saat mengirim ke Google
+      }).catch((err) => console.error(err));
+    }
 
     // Spawn floating hearts
     const newHearts = Array.from({ length: 20 }, (_, i) => ({
@@ -152,7 +167,7 @@ export default function FinalProposal() {
               className="flex flex-col items-center gap-4 sm:flex-row"
             >
               <motion.button
-                onClick={handleAnswer}
+                onClick={() => handleAnswer("Iya")}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 className="pulse-glow group relative overflow-hidden rounded-full border border-[#c9a84c66] bg-[#c9a84c15] px-10 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#c9a84c] transition-all hover:border-[#c9a84caa] hover:bg-[#c9a84c25]"
@@ -173,7 +188,7 @@ export default function FinalProposal() {
               </motion.button>
 
               <motion.button
-                onClick={handleAnswer}
+                onClick={() => handleAnswer("Tentu iya")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="rounded-full border border-[#f5f0e822] bg-transparent px-10 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#f5f0e888] transition-all hover:border-[#c9a84c44] hover:text-[#c9a84c]"
