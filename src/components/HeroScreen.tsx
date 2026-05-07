@@ -18,6 +18,12 @@ export default function HeroScreen({ onNext }: Props) {
     setPartnerName(nameToSet);
     setIsNameSet(true);
     document.title = `Untuk ${nameToSet} — Viki`;
+
+    // Pastikan musik diputar saat tombol diklik
+    const audio = document.querySelector("audio");
+    if (audio) {
+      audio.play().catch(() => {});
+    }
   };
 
   if (!isNameSet) {
