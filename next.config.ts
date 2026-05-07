@@ -9,8 +9,8 @@ const nextConfig: NextConfig = {
   },
 
 
-  basePath: '/engagement',
-  assetPrefix: '/engagement',
+  basePath: '', 
+  assetPrefix: '',
 };
 
 export default nextConfig;

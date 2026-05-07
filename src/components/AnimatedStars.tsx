@@ -52,10 +52,10 @@ export default function AnimatedStars() {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
 
-        // Warm white / gold tint for stars
-        const r = Math.floor(200 + Math.random() * 55);
-        const g = Math.floor(180 + Math.random() * 55);
-        const b = Math.floor(140 + Math.random() * 80);
+        // Soft blush / white tint for stars
+        const r = Math.floor(240 + Math.random() * 15);
+        const g = Math.floor(200 + Math.random() * 55);
+        const b = Math.floor(220 + Math.random() * 35);
         ctx.fillStyle = `rgba(${r},${g},${b},${opacity})`;
         ctx.fill();
 
@@ -69,8 +69,8 @@ export default function AnimatedStars() {
             star.y,
             star.size * 4
           );
-          gradient.addColorStop(0, `rgba(240,217,138,${opacity * 0.4})`);
-          gradient.addColorStop(1, "rgba(240,217,138,0)");
+          gradient.addColorStop(0, `rgba(254,205,211,${opacity * 0.4})`);
+          gradient.addColorStop(1, "rgba(254,205,211,0)");
           ctx.beginPath();
           ctx.arc(star.x, star.y, star.size * 4, 0, Math.PI * 2);
           ctx.fillStyle = gradient;

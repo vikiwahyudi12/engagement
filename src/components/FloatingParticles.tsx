@@ -31,10 +31,10 @@ export default function FloatingParticles() {
     window.addEventListener("resize", resize);
 
     const colors = [
-      "rgba(201, 168, 76,",
-      "rgba(240, 217, 138,",
-      "rgba(245, 240, 232,",
-      "rgba(232, 201, 122,",
+      "rgba(253, 164, 175,",
+      "rgba(254, 205, 211,",
+      "rgba(248, 250, 252,",
+      "rgba(251, 113, 133,",
     ];
 
     const particles: Particle[] = Array.from({ length: 80 }, () => ({

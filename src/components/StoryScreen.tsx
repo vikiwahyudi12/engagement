@@ -75,7 +75,7 @@ export default function StoryScreen({ onNext }: Props) {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse at 50% 50%, rgba(253,164,175,0.04) 0%, transparent 70%)",
         }}
       />
 
@@ -86,8 +86,8 @@ export default function StoryScreen({ onNext }: Props) {
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col items-center gap-2"
         >
-          <div className="h-px w-12 bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent" />
-          <p className="font-[var(--font-poppins)] text-[10px] tracking-[0.4em] text-[#c9a84c88] uppercase">
+          <div className="h-px w-12 bg-gradient-to-r from-transparent via-[#fda4af] to-transparent" />
+          <p className="font-[var(--font-poppins)] text-[10px] tracking-[0.4em] text-[#fda4af88] uppercase">
             Kisah Kita
           </p>
         </motion.div>
@@ -106,38 +106,38 @@ export default function StoryScreen({ onNext }: Props) {
               className="w-full"
             >
               <div
-                className="relative w-full rounded-2xl border border-[#c9a84c15] bg-[#12100e]/70 p-6 backdrop-blur-sm sm:p-8"
+                className="relative w-full rounded-2xl border border-[#fda4af15] bg-[#0f172a]/70 p-6 backdrop-blur-sm sm:p-8"
                 style={{
                   boxShadow:
-                    "0 4px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(201,168,76,0.06)",
+                    "0 4px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(253,164,175,0.06)",
                 }}
               >
                 {/* Corner accent */}
                 <div className="absolute top-0 left-0 h-8 w-8 overflow-hidden rounded-tl-2xl">
-                  <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#c9a84c] to-transparent" />
-                  <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-[#c9a84c] to-transparent" />
+                  <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#fda4af] to-transparent" />
+                  <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-[#fda4af] to-transparent" />
                 </div>
 
                 <div className="flex flex-col gap-4">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-[var(--font-playfair)] text-4xl font-bold italic text-[#c9a84c18]">
+                    <span className="font-[var(--font-playfair)] text-4xl font-bold italic text-[#fda4af18]">
                       {story.chapter}
                     </span>
-                    <p className="font-[var(--font-poppins)] text-[10px] tracking-[0.3em] text-[#c9a84c88] uppercase">
+                    <p className="font-[var(--font-poppins)] text-[10px] tracking-[0.3em] text-[#fda4af88] uppercase">
                       Bab {story.chapter}
                     </p>
                   </div>
 
-                  <h3 className="font-[var(--font-playfair)] text-xl font-semibold italic text-[#f5f0e8] sm:text-2xl">
+                  <h3 className="font-[var(--font-playfair)] text-xl font-semibold italic text-[#f8fafc] sm:text-2xl">
                     {story.title}
                   </h3>
 
-                  <p className="font-[var(--font-poppins)] text-sm leading-7 text-[#f5f0e8aa]">
+                  <p className="font-[var(--font-poppins)] text-sm leading-7 text-[#f8fafcaa]">
                     {story.body}
                   </p>
 
-                  <div className="mt-1 border-l-2 border-[#c9a84c44] pl-4">
-                    <p className="font-[var(--font-playfair)] text-sm italic text-[#c9a84c]">
+                  <div className="mt-1 border-l-2 border-[#fda4af44] pl-4">
+                    <p className="font-[var(--font-playfair)] text-sm italic text-[#fda4af]">
                       &ldquo;{story.quote}&rdquo;
                     </p>
                   </div>
@@ -162,8 +162,8 @@ export default function StoryScreen({ onNext }: Props) {
               <div
                 className={`rounded-full transition-all duration-300 ${
                   i === idx
-                    ? "h-1.5 w-5 bg-[#c9a84c]"
-                    : "h-1.5 w-1.5 bg-[#c9a84c33]"
+                    ? "h-1.5 w-5 bg-[#fda4af]"
+                    : "h-1.5 w-1.5 bg-[#fda4af33]"
                 }`}
               />
             </button>
@@ -178,8 +178,8 @@ export default function StoryScreen({ onNext }: Props) {
             whileTap={{ scale: 0.95 }}
             className={`rounded-full border px-5 py-2.5 font-[var(--font-poppins)] text-xs tracking-widest transition-all ${
               idx === 0
-                ? "cursor-not-allowed border-[#c9a84c11] text-[#c9a84c22]"
-                : "border-[#c9a84c33] text-[#c9a84c88] hover:border-[#c9a84c66] hover:text-[#c9a84c]"
+                ? "cursor-not-allowed border-[#fda4af11] text-[#fda4af22]"
+                : "border-[#fda4af33] text-[#fda4af88] hover:border-[#fda4af66] hover:text-[#fda4af]"
             }`}
             disabled={idx === 0}
           >
@@ -191,10 +191,10 @@ export default function StoryScreen({ onNext }: Props) {
             onClick={goNext}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.95 }}
-            className="pulse-glow relative flex items-center gap-2 overflow-hidden rounded-full border border-[#c9a84c55] bg-[#c9a84c0d] px-7 py-2.5 font-[var(--font-poppins)] text-sm tracking-widest text-[#c9a84c] transition-all hover:border-[#c9a84c99] hover:bg-[#c9a84c1a]"
+            className="pulse-glow relative flex items-center gap-2 overflow-hidden rounded-full border border-[#fda4af55] bg-[#fda4af0d] px-7 py-2.5 font-[var(--font-poppins)] text-sm tracking-widest text-[#fda4af] transition-all hover:border-[#fda4af99] hover:bg-[#fda4af1a]"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-[#c9a84c15] to-transparent"
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-[#fda4af15] to-transparent"
               animate={{ x: ["-100%", "100%"] }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             />

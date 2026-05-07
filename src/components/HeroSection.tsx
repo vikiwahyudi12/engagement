@@ -36,7 +36,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
       <section className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-5 text-center">
         {/* Background elements from original component */}
         <div className="pointer-events-none absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#0a0806]" />
+          <div className="absolute inset-0 bg-[#020617]" />
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -44,7 +44,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
             className="absolute bottom-0 left-0 right-0 h-1/2"
             style={{
               background:
-                "radial-gradient(ellipse at 50% 100%, rgba(201,168,76,0.08) 0%, rgba(180,100,50,0.04) 40%, transparent 70%)",
+                "radial-gradient(ellipse at 50% 100%, rgba(253,164,175,0.08) 0%, rgba(225,29,72,0.04) 40%, transparent 70%)",
             }}
           />
           <div
@@ -61,7 +61,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="font-[var(--font-playfair)] text-3xl font-semibold text-[#f5f0e8] sm:text-4xl"
+            className="font-[var(--font-playfair)] text-3xl font-semibold text-[#f8fafc] sm:text-4xl"
           >
             Hai, tulis namamu dulu ya
           </motion.h1>
@@ -77,11 +77,11 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
               onChange={(e) => setLocalName(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleOpen()}
               placeholder="Ketik namamu di sini..."
-              className="w-full rounded-full border border-[#c9a84c44] bg-[#12100e] px-6 py-4 text-center font-[var(--font-poppins)] text-base text-[#f5f0e8] placeholder-[#f5f0e855] transition-all focus:border-[#c9a84c88] focus:outline-none focus:ring-2 focus:ring-[#c9a84c]/50"
+              className="w-full rounded-full border border-[#fda4af44] bg-[#0f172a] px-6 py-4 text-center font-[var(--font-poppins)] text-base text-[#f8fafc] placeholder-[#f8fafc55] transition-all focus:border-[#fda4af88] focus:outline-none focus:ring-2 focus:ring-[#fda4af]/50"
             />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6 }}>
-            <motion.button onClick={handleOpen} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="pulse-glow group flex items-center gap-2 rounded-full border border-[#c9a84c55] bg-[#c9a84c0d] px-8 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#c9a84c] transition-all hover:border-[#c9a84c99] hover:bg-[#c9a84c1a]">
+            <motion.button onClick={handleOpen} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="pulse-glow group flex items-center gap-2 rounded-full border border-[#fda4af55] bg-[#fda4af0d] px-8 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#fda4af] transition-all hover:border-[#fda4af99] hover:bg-[#fda4af1a]">
               <span>Lanjutkan</span>
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </motion.button>
@@ -95,7 +95,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
     <section className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-5 text-center">
       {/* Background gradient layers */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[#0a0806]" />
+        <div className="absolute inset-0 bg-[#020617]" />
 
         {/* City lights glow bottom */}
         <motion.div
@@ -105,7 +105,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
           className="absolute bottom-0 left-0 right-0 h-1/2"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 100%, rgba(201,168,76,0.08) 0%, rgba(180,100,50,0.04) 40%, transparent 70%)",
+              "radial-gradient(ellipse at 50% 100%, rgba(253,164,175,0.08) 0%, rgba(225,29,72,0.04) 40%, transparent 70%)",
           }}
         />
 
@@ -122,10 +122,10 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
         <motion.div
           animate={{
             background: [
-              "radial-gradient(ellipse at 30% 40%, rgba(201,168,76,0.06) 0%, transparent 60%)",
-              "radial-gradient(ellipse at 70% 60%, rgba(201,168,76,0.08) 0%, transparent 60%)",
-              "radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.05) 0%, transparent 60%)",
-              "radial-gradient(ellipse at 30% 40%, rgba(201,168,76,0.06) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 30% 40%, rgba(253,164,175,0.06) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 70% 60%, rgba(253,164,175,0.08) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 50% 30%, rgba(253,164,175,0.05) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 30% 40%, rgba(253,164,175,0.06) 0%, transparent 60%)",
             ],
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
@@ -141,8 +141,8 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
         className="pointer-events-none absolute inset-0 z-0 opacity-20"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 20% 80%, rgba(201,168,76,0.15) 0%, transparent 40%),
-            radial-gradient(circle at 80% 20%, rgba(201,168,76,0.1) 0%, transparent 40%)
+            radial-gradient(circle at 20% 80%, rgba(253,164,175,0.15) 0%, transparent 40%),
+            radial-gradient(circle at 80% 20%, rgba(253,164,175,0.1) 0%, transparent 40%)
           `,
         }}
       />
@@ -154,7 +154,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="h-px w-20 bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent"
+          className="h-px w-20 bg-gradient-to-r from-transparent via-[#fda4af] to-transparent"
         />
 
         {/* Subtitle */}
@@ -162,7 +162,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="font-[var(--font-poppins)] text-[10px] tracking-[0.35em] text-[#c9a84c88] uppercase sm:text-xs"
+          className="font-[var(--font-poppins)] text-[10px] tracking-[0.35em] text-[#fda4af88] uppercase sm:text-xs"
         >
           Sebuah pesan dari hati
         </motion.p>
@@ -172,7 +172,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, delay: 1.0, ease: "easeOut" }}
-          className="font-[var(--font-playfair)] text-[1.75rem] font-semibold leading-snug tracking-wide text-[#f5f0e8] sm:text-4xl md:text-5xl lg:text-6xl"
+          className="font-[var(--font-playfair)] text-[1.75rem] font-semibold leading-snug tracking-wide text-[#f8fafc] sm:text-4xl md:text-5xl lg:text-6xl"
         >
           Untuk{" "}
           <motion.span
@@ -190,7 +190,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 2.2 }}
-          className="font-[var(--font-playfair)] text-lg font-normal italic leading-relaxed text-[#f5f0e8bb] sm:text-2xl md:text-3xl"
+          className="font-[var(--font-playfair)] text-lg font-normal italic leading-relaxed text-[#f8fafcbb] sm:text-2xl md:text-3xl"
         >
           seseorang yang selalu ingin kujadikan tujuan pulang.
         </motion.p>
@@ -202,11 +202,11 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
           transition={{ duration: 1, delay: 2.8 }}
           className="flex items-center gap-3"
         >
-          <div className="h-px w-8 bg-[#c9a84c44]" />
-          <p className="font-[var(--font-poppins)] text-xs tracking-widest text-[#c9a84c88]">
+          <div className="h-px w-8 bg-[#fda4af44]" />
+          <p className="font-[var(--font-poppins)] text-xs tracking-widest text-[#fda4af88]">
             Viki
           </p>
-          <div className="h-px w-8 bg-[#c9a84c44]" />
+          <div className="h-px w-8 bg-[#fda4af44]" />
         </motion.div>
 
         {/* CTA Button */}
@@ -220,14 +220,14 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
             onClick={handleOpen}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="pulse-glow relative overflow-hidden rounded-full border border-[#c9a84c55] bg-[#c9a84c0d] px-8 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#c9a84c] transition-all hover:border-[#c9a84c99] hover:bg-[#c9a84c1a] active:scale-95"
+            className="pulse-glow relative overflow-hidden rounded-full border border-[#fda4af55] bg-[#fda4af0d] px-8 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#fda4af] transition-all hover:border-[#fda4af99] hover:bg-[#fda4af1a] active:scale-95"
           >
             <span className="relative z-10 flex items-center gap-2">
               Buka Pesannya
               <Heart size={14} className="fill-current" />
             </span>
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-[#c9a84c15] to-transparent"
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-[#fda4af15] to-transparent"
               animate={{ x: ["-100%", "100%"] }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             />
@@ -239,7 +239,7 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 3.5 }}
-          className="h-px w-20 bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent"
+          className="h-px w-20 bg-gradient-to-r from-transparent via-[#fda4af] to-transparent"
         />
       </div>
 
@@ -251,8 +251,8 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
         className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2"
       >
         <div className="flex flex-col items-center gap-1">
-          <div className="h-6 w-px bg-gradient-to-b from-transparent to-[#c9a84c66]" />
-          <div className="h-1.5 w-1.5 rotate-45 border-b border-r border-[#c9a84c66]" />
+          <div className="h-6 w-px bg-gradient-to-b from-transparent to-[#fda4af66]" />
+          <div className="h-1.5 w-1.5 rotate-45 border-b border-r border-[#fda4af66]" />
         </div>
       </motion.div>
     </section>

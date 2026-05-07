@@ -36,12 +36,12 @@ export default function ConfettiEffect({ active }: ConfettiEffectProps) {
     canvas.height = window.innerHeight;
 
     const colors = [
-      "#c9a84c",
-      "#f0d98a",
-      "#e8c97a",
-      "#f5f0e8",
+      "#fda4af",
+      "#fecdd3",
+      "#fb7185",
+      "#f8fafc",
       "#ffffff",
-      "#ffd700",
+      "#f43f5e",
       "#ffb6c1",
       "#ff69b4",
     ];

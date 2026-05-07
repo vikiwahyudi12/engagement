@@ -18,7 +18,7 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0a0806]"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#020617]"
         >
           {/* Cinematic bars */}
           <motion.div
@@ -45,14 +45,14 @@ export default function LoadingScreen() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              className="h-16 w-16 rounded-full border border-[#c9a84c33] border-t-[#c9a84c]"
+              className="h-16 w-16 rounded-full border border-[#fda4af33] border-t-[#fda4af]"
             />
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0.6, 1] }}
               transition={{ duration: 2, delay: 0.8, repeat: 1 }}
-              className="font-[var(--font-playfair)] text-sm italic tracking-[0.3em] text-[#c9a84c88]"
+              className="font-[var(--font-playfair)] text-sm italic tracking-[0.3em] text-[#fda4af88]"
             >
               memuat cerita...
             </motion.p>

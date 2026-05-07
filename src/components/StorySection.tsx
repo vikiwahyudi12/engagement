@@ -66,45 +66,45 @@ function StoryCard({ story, index }: { story: StoryCard; index: number }) {
       {/* Chapter number */}
       <div className="flex items-center gap-4">
         {story.align === "right" && (
-          <div className="hidden h-px flex-1 bg-gradient-to-l from-[#c9a84c33] to-transparent md:block" />
+          <div className="hidden h-px flex-1 bg-gradient-to-l from-[#fda4af33] to-transparent md:block" />
         )}
-        <span className="font-[var(--font-playfair)] text-5xl font-bold italic text-[#c9a84c15]">
+        <span className="font-[var(--font-playfair)] text-5xl font-bold italic text-[#fda4af15]">
           {story.chapter}
         </span>
         {story.align === "left" && (
-          <div className="hidden h-px flex-1 bg-gradient-to-r from-[#c9a84c33] to-transparent md:block" />
+          <div className="hidden h-px flex-1 bg-gradient-to-r from-[#fda4af33] to-transparent md:block" />
         )}
       </div>
 
       {/* Card */}
       <div
-        className={`relative w-full max-w-lg rounded-2xl border border-[#c9a84c15] bg-[#12100e]/60 p-5 backdrop-blur-sm sm:p-8 ${
+        className={`relative w-full max-w-lg rounded-2xl border border-[#fda4af15] bg-[#0f172a]/60 p-5 backdrop-blur-sm sm:p-8 ${
           story.align === "right" ? "md:ml-auto" : ""
         }`}
         style={{
-          boxShadow: "0 4px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(201,168,76,0.05)",
+          boxShadow: "0 4px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(253,164,175,0.05)",
         }}
       >
         {/* Gold accent corner */}
         <div className="absolute top-0 left-0 h-8 w-8 overflow-hidden rounded-tl-2xl">
-          <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#c9a84c] to-transparent" />
-          <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-[#c9a84c] to-transparent" />
+          <div className="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-[#fda4af] to-transparent" />
+          <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-[#fda4af] to-transparent" />
         </div>
 
         <div className="flex flex-col gap-4">
-          <p className="font-[var(--font-poppins)] text-xs tracking-[0.3em] text-[#c9a84c88] uppercase">
+          <p className="font-[var(--font-poppins)] text-xs tracking-[0.3em] text-[#fda4af88] uppercase">
             Bab {story.chapter}
           </p>
-          <h3 className="font-[var(--font-playfair)] text-2xl font-semibold italic text-[#f5f0e8]">
+          <h3 className="font-[var(--font-playfair)] text-2xl font-semibold italic text-[#f8fafc]">
             {story.title}
           </h3>
-          <p className="font-[var(--font-poppins)] text-sm leading-7 text-[#f5f0e8aa]">
+          <p className="font-[var(--font-poppins)] text-sm leading-7 text-[#f8fafcaa]">
             {story.body}
           </p>
 
           {/* Quote */}
-          <div className="mt-2 border-l-2 border-[#c9a84c44] pl-4">
-            <p className="font-[var(--font-playfair)] text-sm italic text-[#c9a84c]">
+          <div className="mt-2 border-l-2 border-[#fda4af44] pl-4">
+            <p className="font-[var(--font-playfair)] text-sm italic text-[#fda4af]">
               &ldquo;{story.quote}&rdquo;
             </p>
           </div>
@@ -133,7 +133,7 @@ export default function StorySection() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.03) 0%, transparent 70%)",
+            "radial-gradient(ellipse at 50% 50%, rgba(253,164,175,0.03) 0%, transparent 70%)",
         }}
       />
 
@@ -146,18 +146,18 @@ export default function StorySection() {
           transition={{ duration: 1 }}
           className="mb-20 flex flex-col items-center gap-4 text-center"
         >
-          <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent" />
-          <p className="font-[var(--font-poppins)] text-xs tracking-[0.4em] text-[#c9a84c88] uppercase">
+          <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#fda4af] to-transparent" />
+          <p className="font-[var(--font-poppins)] text-xs tracking-[0.4em] text-[#fda4af88] uppercase">
             Kisah Kita
           </p>
-          <h2 className="font-[var(--font-playfair)] text-4xl font-semibold italic text-[#f5f0e8] md:text-5xl">
+          <h2 className="font-[var(--font-playfair)] text-4xl font-semibold italic text-[#f8fafc] md:text-5xl">
             Sebuah Perjalanan
           </h2>
-          <p className="max-w-md font-[var(--font-poppins)] text-sm leading-7 text-[#f5f0e8aa]">
+          <p className="max-w-md font-[var(--font-poppins)] text-sm leading-7 text-[#f8fafcaa]">
             Setiap cerita besar dimulai dari momen-momen kecil yang terasa biasa,
             namun ternyata mengubah segalanya.
           </p>
-          <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent" />
+          <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#fda4af] to-transparent" />
         </motion.div>
 
         {/* Story cards */}

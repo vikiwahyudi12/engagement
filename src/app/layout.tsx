@@ -44,7 +44,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${poppins.variable} h-full`}
     >
       <NameProvider>
-        <body className="grain-overlay min-h-full bg-[#0a0806] text-[#f5f0e8] antialiased">
+        <body className="grain-overlay min-h-full bg-[#020617] text-[#f8fafc] antialiased">
           {children}
         </body>
       </NameProvider>
