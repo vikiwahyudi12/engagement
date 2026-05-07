@@ -178,7 +178,7 @@ export default function FinalScreen() {
                 transition={{ delay: 0.3, duration: 0.9 }}
                 className="max-w-sm font-[var(--font-playfair)] text-lg italic leading-8 text-[#f5f0e8] sm:text-xl"
               >
-                &ldquo;Mulai sekarang, bukan lagi tentang aku atau kamu. Tapi tentang kita. Terima kasih sudah menjadi rumah terbaik yang pernah aku temukan. Mulai hari ini, aku akan berusaha menjadi rumah terbaik untukmu, dalam segala keadaan dan sampai kapan pun.&rdquo;
+                &ldquo;Mulai sekarang, bukan lagi tentang aku atau kamu, tapi tentang kita. Terima kasih sudah menjadi rumah terbaik yang pernah aku temukan, dan mulai hari ini, izinkan aku menjaga, menemani, dan mencintaimu sampai kapan pun.&rdquo;
               </motion.p>
 
               <motion.div
