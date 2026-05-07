@@ -19,12 +19,6 @@ export default function HeroSection({ onOpen }: HeroSectionProps) {
       setPartnerName(nameToSet);
       setIsNameSet(true);
       document.title = `Untuk ${nameToSet} — Viki`;
-
-      // Pastikan musik diputar saat tombol diklik
-      const audio = document.querySelector("audio");
-      if (audio) {
-        audio.play().catch(() => {});
-      }
     }
 
     onOpen();

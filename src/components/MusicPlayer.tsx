@@ -11,17 +11,16 @@ export default function MusicPlayer() {
 
     audio.volume = 0.35;
 
-    const onInteract = () => {
-      audio.play().catch(() => {});
-      document.removeEventListener("click", onInteract);
-      document.removeEventListener("touchstart", onInteract);
-      document.removeEventListener("keydown", onInteract);
-    };
-
     // Try autoplay — browsers may block it until user interaction
     const tryPlay = () => {
       audio.play().catch(() => {
         // Blocked by browser policy; retry on first user interaction
+        const onInteract = () => {
+          audio.play().catch(() => {});
+          document.removeEventListener("click", onInteract);
+          document.removeEventListener("touchstart", onInteract);
+          document.removeEventListener("keydown", onInteract);
+        };
         document.addEventListener("click", onInteract, { once: true });
         document.addEventListener("touchstart", onInteract, { once: true });
         document.addEventListener("keydown", onInteract, { once: true });
@@ -29,12 +28,6 @@ export default function MusicPlayer() {
     };
 
     tryPlay();
-
-    return () => {
-      document.removeEventListener("click", onInteract);
-      document.removeEventListener("touchstart", onInteract);
-      document.removeEventListener("keydown", onInteract);
-    };
   }, []);
 
   return (
