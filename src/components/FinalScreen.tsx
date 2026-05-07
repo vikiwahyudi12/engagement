@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import ConfettiEffect from "./ConfettiEffect";
@@ -9,21 +9,30 @@ export default function FinalScreen() {
   const [answered, setAnswered] = useState(false);
   const [confetti, setConfetti] = useState(false);
   const [hearts, setHearts] = useState<{ id: number; x: number; size: number }[]>([]);
+  const [tidakPos, setTidakPos] = useState({ x: 0, y: 0 });
 
   const handleAnswer = () => {
     setAnswered(true);
     setConfetti(true);
-
     const newHearts = Array.from({ length: 18 }, (_, i) => ({
       id: Date.now() + i,
       x: 10 + Math.random() * 80,
       size: 16 + Math.random() * 20,
     }));
     setHearts(newHearts);
-
     setTimeout(() => setConfetti(false), 5000);
     setTimeout(() => setHearts([]), 4500);
   };
+
+  // Tombol "Tidak" lari saat dihover/diklik
+  const runAway = useCallback(() => {
+    const maxX = 120;
+    const maxY = 80;
+    setTidakPos({
+      x: (Math.random() - 0.5) * maxX * 2,
+      y: (Math.random() - 0.5) * maxY * 2,
+    });
+  }, []);
 
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden px-5 text-center">
@@ -122,15 +131,14 @@ export default function FinalScreen() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.8, delay: 1.3 }}
-              className="flex flex-col items-center gap-3 sm:flex-row"
+              className="flex w-full max-w-xs flex-col items-center gap-3"
             >
-              <motion.button
+              {/* Tombol Iya — posisi tetap */}
+              <button
                 onClick={handleAnswer}
-                whileHover={{ scale: 1.07 }}
-                whileTap={{ scale: 0.95 }}
-                className="pulse-glow relative overflow-hidden rounded-full border border-[#c9a84c66] bg-[#c9a84c15] px-10 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#c9a84c] transition-all hover:border-[#c9a84caa] hover:bg-[#c9a84c25]"
+                className="pulse-glow relative w-full overflow-hidden rounded-full border border-[#c9a84c66] bg-[#c9a84c15] py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#c9a84c] transition-all active:scale-95 hover:border-[#c9a84caa] hover:bg-[#c9a84c25]"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center justify-center gap-2">
                   Iya <Heart size={13} className="fill-current" />
                 </span>
                 <motion.div
@@ -138,16 +146,28 @@ export default function FinalScreen() {
                   animate={{ x: ["-100%", "100%"] }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
                 />
-              </motion.button>
+              </button>
 
-              <motion.button
+              {/* Tombol Tentu iya — posisi tetap */}
+              <button
                 onClick={handleAnswer}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.95 }}
-                className="rounded-full border border-[#f5f0e822] px-10 py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#f5f0e877] transition-all hover:border-[#c9a84c44] hover:text-[#c9a84c]"
+                className="w-full rounded-full border border-[#f5f0e822] py-4 font-[var(--font-poppins)] text-sm tracking-widest text-[#f5f0e877] transition-all active:scale-95 hover:border-[#c9a84c44] hover:text-[#c9a84c]"
               >
                 Tentu iya
-              </motion.button>
+              </button>
+
+              {/* Tombol Tidak — lari saat dihover/diklik */}
+              <div className="relative h-12 w-full">
+                <motion.button
+                  animate={{ x: tidakPos.x, y: tidakPos.y }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  onHoverStart={runAway}
+                  onTap={runAway}
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-not-allowed rounded-full border border-[#f5f0e811] px-8 py-2.5 font-[var(--font-poppins)] text-xs tracking-widest text-[#f5f0e833]"
+                >
+                  Tidak
+                </motion.button>
+              </div>
             </motion.div>
           ) : (
             <motion.div
@@ -178,7 +198,7 @@ export default function FinalScreen() {
                 transition={{ delay: 0.3, duration: 0.9 }}
                 className="max-w-sm font-[var(--font-playfair)] text-lg italic leading-8 text-[#f5f0e8] sm:text-xl"
               >
-                &ldquo;Mulai sekarang, bukan lagi tentang aku atau kamu, tapi tentang kita. Terima kasih sudah menjadi rumah terbaik yang pernah aku temukan, dan mulai hari ini, izinkan aku menjaga, menemani, dan mencintaimu sampai kapan pun.&rdquo;
+                Mulai sekarang, bukan lagi tentang aku atau kamu, tapi tentang kita. Terima kasih sudah menjadi rumah terbaik yang pernah aku temukan, dan mulai hari ini, izinkan aku menjaga, menemani, dan mencintaimu sampai kapan pun
               </motion.p>
 
               <motion.div
