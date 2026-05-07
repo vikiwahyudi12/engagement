@@ -17,9 +17,24 @@ export default function FinalScreen() {
     return null;
   }
 
-  const handleAnswer = () => {
+  const handleAnswer = (answer: string) => {
     setAnswered(true);
     setConfetti(true);
+
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbz77tTrsb8kHr1LxPBJuD0NIN6d90eDr7z-1uNCfSv7so_ASsLMfTH89V5KKQxqnPG2/exec";
+    
+    if (scriptUrl) {
+      const formData = new FormData();
+      formData.append("name", partnerName);
+      formData.append("answer", answer);
+
+      fetch(scriptUrl, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      }).catch((err) => console.error(err));
+    }
+
     const newHearts = Array.from({ length: 18 }, (_, i) => ({
       id: Date.now() + i,
       x: 10 + Math.random() * 80,
